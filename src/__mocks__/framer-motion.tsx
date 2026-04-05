@@ -5,11 +5,18 @@
 import React from 'react';
 
 const MOTION_PROPS = new Set([
-  'initial', 'animate', 'exit', 'transition', 'variants', 'layout', 'layoutId',
+  // Animation state
+  'initial', 'animate', 'exit', 'transition', 'variants',
+  // Layout
+  'layout', 'layoutId',
+  // Gesture whiles
   'whileHover', 'whileTap', 'whileFocus', 'whileInView', 'whileDrag',
+  // Drag
   'drag', 'dragConstraints', 'dragElastic', 'dragMomentum',
+  // Animation callbacks
   'onAnimationStart', 'onAnimationComplete', 'onUpdate',
-  'onDragStart', 'onDragEnd', 'onLayoutAnimationStart', 'onLayoutAnimationComplete',
+  'onDragStart', 'onDragEnd',
+  'onLayoutAnimationStart', 'onLayoutAnimationComplete',
 ]);
 
 function stripMotionProps(props: Record<string, unknown>) {

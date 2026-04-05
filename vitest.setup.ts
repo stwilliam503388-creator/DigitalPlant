@@ -1,17 +1,21 @@
 import '@testing-library/jest-dom';
-import { vi, beforeEach, afterEach } from 'vitest';
+import { vi, beforeEach } from 'vitest';
+
+function makeMatchMediaMock(query: string) {
+  return {
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: vi.fn(),
+    removeListener: vi.fn(),
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+    dispatchEvent: vi.fn(),
+  };
+}
 
 // Mock window.matchMedia (not available in jsdom)
-const matchMediaMock = vi.fn().mockImplementation((query: string) => ({
-  matches: false,
-  media: query,
-  onchange: null,
-  addListener: vi.fn(),
-  removeListener: vi.fn(),
-  addEventListener: vi.fn(),
-  removeEventListener: vi.fn(),
-  dispatchEvent: vi.fn(),
-}));
+const matchMediaMock = vi.fn().mockImplementation(makeMatchMediaMock);
 
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
@@ -35,16 +39,7 @@ Object.defineProperty(window, 'Notification', {
 beforeEach(() => {
   localStorage.clear();
   // Reset matchMedia to return false (light mode) by default
-  matchMediaMock.mockImplementation((query: string) => ({
-    matches: false,
-    media: query,
-    onchange: null,
-    addListener: vi.fn(),
-    removeListener: vi.fn(),
-    addEventListener: vi.fn(),
-    removeEventListener: vi.fn(),
-    dispatchEvent: vi.fn(),
-  }));
+  matchMediaMock.mockImplementation(makeMatchMediaMock);
   // Reset document dark class
   document.documentElement.classList.remove('dark');
 });
