@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Plus Jakarta Sans", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Be Vietnam Pro", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+  --font-label: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary: #173809;
+  --color-primary-container: #2d4f1e;
+  --color-on-primary: #ffffff;
+  
+  --color-secondary: #56642b;
+  --color-secondary-container: #d6e7a1;
+  --color-on-secondary-container: #5a682f;
+  --color-secondary-fixed: #d9eaa3;
+  
+  --color-tertiary: #581d03;
+  --color-tertiary-container: #753316;
+  --color-tertiary-fixed: #ffdbce;
+  
+  --color-surface: #f9faf6;
+  --color-surface-dim: #d9dad7;
+  --color-surface-bright: #f9faf6;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f3f4f0;
+  --color-surface-container: #edeeea;
+  --color-surface-container-high: #e7e9e5;
+  --color-surface-container-highest: #e2e3df;
+  
+  --color-on-surface: #1a1c1a;
+  --color-on-surface-variant: #43493e;
+  --color-outline: #73796d;
+  --color-outline-variant: #c3c8bb;
+}
+
+@layer base {
+  :root {
+    --color-primary: #173809;
+    --color-primary-container: #2d4f1e;
+    --color-on-primary: #ffffff;
+    
+    --color-secondary: #56642b;
+    --color-secondary-container: #d6e7a1;
+    --color-on-secondary-container: #5a682f;
+    --color-secondary-fixed: #d9eaa3;
+    
+    --color-tertiary: #581d03;
+    --color-tertiary-container: #753316;
+    --color-tertiary-fixed: #ffdbce;
+    
+    --color-surface: #f9faf6;
+    --color-surface-dim: #d9dad7;
+    --color-surface-bright: #f9faf6;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #f3f4f0;
+    --color-surface-container: #edeeea;
+    --color-surface-container-high: #e7e9e5;
+    --color-surface-container-highest: #e2e3df;
+    
+    --color-on-surface: #1a1c1a;
+    --color-on-surface-variant: #43493e;
+    --color-outline: #73796d;
+    --color-outline-variant: #c3c8bb;
+  }
+
+  .dark {
+    --color-primary: #a8d695;
+    --color-primary-container: #3a5032;
+    --color-on-primary: #173809;
+    
+    --color-secondary: #bfcbad;
+    --color-secondary-container: #404b33;
+    --color-on-secondary-container: #d9eaa3;
+    --color-secondary-fixed: #d9eaa3;
+    
+    --color-tertiary: #ffb4a1;
+    --color-tertiary-container: #581d03;
+    --color-tertiary-fixed: #ffdbce;
+    
+    --color-surface: #111411;
+    --color-surface-dim: #111411;
+    --color-surface-bright: #373a36;
+    --color-surface-container-lowest: #0c0f0c;
+    --color-surface-container-low: #1a1c1a;
+    --color-surface-container: #1e211e;
+    --color-surface-container-high: #282b28;
+    --color-surface-container-highest: #333632;
+    
+    --color-on-surface: #e2e3df;
+    --color-on-surface-variant: #c3c8bb;
+    --color-outline: #8d9287;
+    --color-outline-variant: #43493e;
+  }
+
+  body {
+    @apply bg-surface text-on-surface font-body antialiased transition-colors duration-300;
+  }
+}
+
+.glass-panel {
+  @apply bg-surface/80 backdrop-blur-xl;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

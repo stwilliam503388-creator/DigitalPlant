@@ -1,0 +1,7 @@
+{
+  "name": "Digital Conservatory",
+  "description": "A premium botanical journal and plant care assistant for managing your indoor jungle.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
