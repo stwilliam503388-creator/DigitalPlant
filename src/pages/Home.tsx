@@ -28,7 +28,7 @@ export default function Home() {
       const translation = getPlantTranslation(plant.id);
       return (
         translation.name.toLowerCase().includes(query) ||
-        translation.scientificName.toLowerCase().includes(query) ||
+        (translation.scientificName?.toLowerCase() ?? '').includes(query) ||
         translation.species.toLowerCase().includes(query)
       );
     });
